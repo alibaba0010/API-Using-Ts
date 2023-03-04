@@ -7,3 +7,7 @@ in paths path
 
 "baseUrl": "./src"
 "outDir": "./dist"
+
+
+
+

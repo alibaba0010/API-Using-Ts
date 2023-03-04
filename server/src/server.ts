@@ -1,14 +1,11 @@
 import { createServer } from "http";
-import dotenv from "dotenv";
-import App from "./app";
+// import App from "./app";
+import connectDB from "db";
+import config from "config";
+const PORT = config.get<Number>("PORT");
+const uri = config.get("MONGO_URI");
 
-dotenv.config();
-const PORT = process.env.PORT || 4000;
-
-const uri = process.env.MONGO_URL;
-
-
-const server = createServer(App);
+const server = createServer();
 
 (async () => {
   // await connectDB(uri);

@@ -1,15 +1,15 @@
 import { createServer } from "http";
-// import App from "./app";
-import connectDB from "db";
+import app from "./app";
+import connectDB from "./db";
 import config from "config";
-const PORT = config.get<Number>("PORT");
-const uri = config.get("MONGO_URI");
-
-const server = createServer();
+import { log } from "./services/logger";
+const PORT = config.get<number>("PORT");
+const uri = config.get<string>("MONGO_URI");
+const server = createServer(app);
 
 (async () => {
   // await connectDB(uri);
   server.listen(PORT, () =>
-    console.log(`Listening to port http://localhost:${PORT}`)
+    log.info(`Listening to port http://localhost:${PORT}`)
   );
 })();

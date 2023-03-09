@@ -11,3 +11,4 @@ in paths path
 
 
 
+"strictPropertyInitialization": false, 
